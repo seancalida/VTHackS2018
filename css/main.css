@@ -1,14 +1,24 @@
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Sans-Serif;
   text-align: center;
+  background-image: url("https://wallpapercave.com/wp/oBNaoUT.png");
 }
 
-video {
-  max-width: 100%;
-  width: 320px;
-  text-align: center;
+.bodyDiv{
+    text-align: center;
 }
 
-body {
-   background-image: url("https://wallpapercave.com/wp/oBNaoUT.png");
+#vid-box video{
+	width: 100%;
+	height: auto;
+    max-height: 50vh;
+    max-width: auto;
+}
+
+.video2{
+    width: 33%;
+}
+
+video{
+    width: 25%;
 }
