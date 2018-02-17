@@ -1,30 +1,58 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+  <head>
 
-  <title>Test Communication</title>
+    <title>Dont Laugh Game</title>
 
-  <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
-</head>
+  </head>
 
-<body>
+  <body>
 
-  <h1>Real Time Communication Test</h1>
+    <h1>You Laugh You Lose!</h1>
 
-  <video id="localVideo" autoplay></video>
-  <video id="remoteVideo" autoplay></video>
+    <div id="vid-box"></div>
 
-  <div>
-    <button id="startButton">Start</button>
-    <button id="callButton">Call</button>
-    <button id="hangupButton">Hang Up</button>
-  </div>
+  <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
+    <input type="text" name="username" id="username" placeholder="Pick a username!" />
+    <input type="submit" name="login_submit" value="Log In">
+  </form>
 
+  <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
+    <input type="text" name="number" placeholder="Enter user to dial!" />
+    <input type="submit" value="Call"/>
+  </form>
 
-  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-  <script src="js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+  <script src="http://kevingleason.me/SimpleRTC/js/webrtc.js"></script>
+
+  <script type="text/javascript">
+    var video_out = document.getElementById("vid-box");
+
+    function login(form) {
+      var phone = window.phone = PHONE({
+        number        : form.username.value || "Anonymous", // listen on username line else Anonymous
+        publish_key   : 'pub-c-da6a1135-eae5-44bb-86f5-3ebdd87d500b',
+        subscribe_key : 'sub-c-445d9000-142a-11e8-91c1-eac6831c625c',
+      });
+      phone.ready(function(){ form.username.style.background="#55ff5b"; });
+      phone.receive(function(session){
+        session.connected(function(session) { video_out.appendChild(session.video); });
+        session.ended(function(session) { video_out.innerHTML=''; });
+      });
+      return false;   // So the form does not submit.
+    }
+
+    function makeCall(form){
+      if (!window.phone) alert("Login First!");
+      else phone.dial(form.number.value);
+      return false;
+    }
+
+    </script>
 
 </body>
 
