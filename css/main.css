@@ -1,8 +1,14 @@
 body {
   font-family: sans-serif;
+  text-align: center;
 }
 
 video {
   max-width: 100%;
   width: 320px;
+  text-align: center;
+}
+
+body {
+   background-image: url("https://wallpapercave.com/wp/oBNaoUT.png");
 }
