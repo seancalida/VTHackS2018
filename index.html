@@ -52,7 +52,7 @@
       else phone.dial(form.number.value);
       return false;
     }
-
+    
     </script>
 
     <script type="text/javascript">
@@ -76,7 +76,7 @@
 
             // Request parameters.
             var params = {
-                "returnFaceAttributes": "smile",
+                "returnFaceAttributes": "smile,emotion",
             };
 
             // Display the image.
@@ -102,7 +102,9 @@
             .done(function(data) {
                 // Show formatted JSON on webpage.
     		$("#smileval").text(data[0].faceAttributes.smile);
-                $("#responseTextArea").val(JSON.stringify(data, null, 1));
+    		$("#happyval").text(data[0].faceAttributes.emotion.happiness);
+
+        $("#responseTextArea").val(JSON.stringify(data, null, 1));
 
             })
 
@@ -125,9 +127,14 @@
     <br><br>
     <div id="wrapper" style="width:1020px; display:table;">
         <div id="jsonOutput" style="width:600px; display:table-cell;">
-            Response:
+            Smile?
     	<div id="smileval">
     	</div>
+    	Happy?
+    	<div id="happyval">
+    	</div>
+
+    	Response:
             <br><br>
             <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
         </div>
