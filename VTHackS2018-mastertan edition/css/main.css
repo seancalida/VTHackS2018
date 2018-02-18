@@ -1,0 +1,25 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  text-shadow: 2px 2px 5px red;
+  text-align: center;
+  background-image: url("https://78.media.tumblr.com/26535f92593e7b5db218fcc5a49dd6ff/tumblr_n1a43wf4VN1r3cqoco1_250.gif");
+}
+
+.bodyDiv{
+    text-align: center;
+}
+
+#vid-box video{
+	width: 100%;
+	height: auto;
+    max-height: 50vh;
+    max-width: auto;
+}
+
+.video2{
+    width: 33%;
+}
+
+video{
+    width: 25%;
+}
