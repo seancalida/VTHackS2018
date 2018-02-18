@@ -2,7 +2,7 @@ body {
   font-family: "Times New Roman", Times, serif;
   text-shadow: 2px 2px 5px red;
   text-align: center;
-  background-image: url("https://78.media.tumblr.com/26535f92593e7b5db218fcc5a49dd6ff/tumblr_n1a43wf4VN1r3cqoco1_250.gif");
+  background-image: url("https://media1.giphy.com/media/ZqlvCTNHpqrio/giphy.gif");
 }
 
 .bodyDiv{
@@ -23,4 +23,3 @@ body {
 video{
     width: 25%;
 }
- 

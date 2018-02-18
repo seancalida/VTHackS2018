@@ -1,20 +1,58 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Detect Faces Sample</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-</head>
-<body>
+  'use strict';
 
-<script type="text/javascript">
+
+window.onload = function() {
+    var video_out = document.getElementById("vid-box");
+
+    function login(form) {
+      var phone = window.phone = PHONE({
+        number        : form.username.value || "Anonymous", // listen on username line else Anonymous
+        publish_key   : 'pub-c-da6a1135-eae5-44bb-86f5-3ebdd87d500b',
+        subscribe_key : 'sub-c-445d9000-142a-11e8-91c1-eac6831c625c',
+      });
+      phone.ready(function(){ form.username.style.background="#55ff5b"; });
+      phone.receive(function(session){
+        session.connected(function(session) { video_out.appendChild(session.video); });
+        session.ended(function(session) { video_out.innerHTML=''; });
+      });
+      return false;   // So the form does not submit.
+    }
+      
+    function makeCall(form){
+      if (!window.phone) alert("Login First!");
+      else phone.dial(form.number.value);
+      return false;
+    }
+
+    function takepicture() { while (hangupButton==0) {
+      var context = canvas.getContext('2d');
+      if (width && height) {
+        canvas.width = width;
+        canvas.height = height;
+        context.drawImage(video, 0, 0, width, height);
+      
+        var datanew = canvas.toDataURL('image/png');
+        photo.setAttribute('src', data);
+          VTHacksnewtestsnew.htm(data);
+          if ( VTHacksnewtestsnew.htm >.9)
+          document.getElementById("lres").innerHTML = "You laughed You lost";
+          return hangup();
+     
+      }
+      else {
+        clearphoto();
+      }
+        
+      }
+      return hangup();
+      }
+
     function processImage() {
         // **********************************************
         // *** Update or verify the following values. ***
         // **********************************************
-
         // Replace the subscriptionKey string value with your valid subscription key.
         var subscriptionKey = "8d3c23ec9e66474eb8c482a81d11dae6";
-
         // Replace or verify the region.
         //
         // You must use the same region in your REST API call as you used to obtain your subscription keys.
@@ -24,41 +62,32 @@
         // NOTE: Free trial subscription keys are generated in the westcentralus region, so if you are using
         // a free trial subscription key, you should not need to change this region.
         var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
-
         // Request parameters.
         var params = {
             "returnFaceAttributes": "smile,emotion",
         };
-
         // Display the image.
         var sourceImageUrl = document.getElementById("inputImage").value;
         document.querySelector("#sourceImage").src = sourceImageUrl;
-
         // Perform the REST API call.
         $.ajax({
             url: uriBase + "?" + $.param(params),
-
             // Request headers.
             beforeSend: function(xhrObj){
                 xhrObj.setRequestHeader("Content-Type","application/json");
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
             },
-
             type: "POST",
-
             // Request body.
             data: '{"url": ' + '"' + sourceImageUrl + '"}',
         })
-
         .done(function(data) {
             // Show formatted JSON on webpage.
-		$("#smileval").text(data[0].faceAttributes.smile);
-		$("#happyval").text(data[0].faceAttributes.emotion.happiness);
-		
+    $("#smileval").text(data[0].faceAttributes.smile);
+    $("#happyval").text(data[0].faceAttributes.emotion.happiness);
+    
             $("#responseTextArea").val(JSON.stringify(data, null, 1));
-
         })
-
         .fail(function(jqXHR, textStatus, errorThrown) {
             // Display error message.
             var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
@@ -67,35 +96,4 @@
             alert(errorString);
         });
     };
-</script>
-
-<h1>Detect Faces:</h1>
-
-
-
-Enter the URL to an image that includes a face or faces, then click the <strong>Analyze face</strong> button.
-<br><br>
-Image to analyze: <input type="text" name="inputImage" id="inputImage" value="https://78.media.tumblr.com/26535f92593e7b5db218fcc5a49dd6ff/tumblr_n1a43wf4VN1r3cqoco1_250.gif" />
-<button onclick="processImage()">Analyze face</button>
-<br><br>
-<div id="wrapper" style="width:1020px; display:table;">
-    <div id="jsonOutput" style="width:600px; display:table-cell;">
-        Smile?
-	<div id="smileval">
-	</div>
-	Happy?
-	<div id="happyval">
-	</div>
-	
-	Response:
-        <br><br>
-        <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
-    </div>
-    <div id="imageDiv" style="width:420px; display:table-cell;">
-        Source image:
-        <br><br>
-        <img id="sourceImage" width="400" />
-    </div>
-</div>
-</body>
-</html>
+}
