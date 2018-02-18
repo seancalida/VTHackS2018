@@ -2,7 +2,8 @@ body {
   font-family: "Times New Roman", Times, serif;
   text-shadow: 2px 2px 5px red;
   text-align: center;
-  background-image: url("https://i.imgur.com/ceuV1li.png");
+  background-image: url("https://wallup.net/wp-content/uploads/2016/01/135571-comics-Batman-minimalism-748x421.jpg");
+  background-size: cover;
 }
 
 .bodyDiv{
