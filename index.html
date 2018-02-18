@@ -29,10 +29,6 @@
   <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
   <script src="https://kevingleason.me/SimpleRTC/js/webrtc.js"></script>
 
-  <!--
-  <script type="text/javascript" src="https://github.com/seancalida/VTHackS2018/blob/master/js/jokes.js"></script>
-  -->
-
   <script type="text/javascript">
     var video_out = document.getElementById("vid-box");
 
@@ -269,18 +265,12 @@
       }
     ]
 
-    var answer;
+
     function tellRJoke() {
       var random_index = Math.floor(Math.random() * jokes.length);
       var r_joke = jokes[random_index];
 
-      $("#responseTextArea").val(r_joke.setup);
-
-      answer = r_joke.punchline;
-    }
-
-    function answer() {
-      $("#responseTextArea").val(answer);
+      $("#responseTextArea").val(r_joke.setup + r_joke.punchline);
     }
 
     </script>
@@ -355,7 +345,6 @@
     Image to analyze: <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
     <button onclick="processImage()">Analyze face</button>
     <button onclick="tellRJoke()">Show Joke</button>
-    <button onclick="answer()">Show Answer</button>
     <br><br>
     <div id="wrapper" style="width:1020px; display:table;">
         <div id="jsonOutput" style="width:600px; display:table-cell;">
