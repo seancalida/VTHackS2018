@@ -6,7 +6,7 @@ body {
   background-size: cover;
 }
 
-.bodyDiv{
+.bodyDiv {
     text-align: center;
 }
 
@@ -17,10 +17,25 @@ body {
     max-width: auto;
 }
 
-.video2{
+.video2 {
     width: 33%;
 }
 
-video{
+video {
     width: 25%;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.inputS {
+  position: relative;
+  display: block;
+  float: right;
+  border: none;
+  border-radius: 0;
+  font-weight: 400;
+  font-size: 1.25em;
 }
