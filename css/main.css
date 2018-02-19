@@ -1,16 +1,63 @@
 body {
   font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 1em;
   text-shadow: 2px 2px 5px lightblue;
-  text-align: center;
   background-image: url("https://wallup.net/wp-content/uploads/2016/01/135571-comics-Batman-minimalism-748x421.jpg");
   background-size: cover;
+  font-weight: 300;
+  word-break: break-word;
+  text-align: center;
+}
+
+h1 {
+  border-bottom: 1px solid #ccc;
+}
+
+div#container {
+  margin: 0 auto 0 auto;
+  max-width: 40em;
+  padding: 1em 1.5em 1.3em 1.5em;
+}
+
+div#vids {
+
+}
+
+@media screen and (max-width: 650px) {
+  h1 {
+    font-size: 24px;
+    margin: 0 0 0.8em 0;
+    padding: 0 0 0.2em 0;
+  }
+  h2 {
+    font-size: 20;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 18;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 16;
+  }
 }
 
 .bodyDiv {
     text-align: center;
 }
 
-#vid-box video{
+#localVid video{
 	width: 100%;
 	height: auto;
     max-height: 50vh;
@@ -26,13 +73,11 @@ video {
 }
 
 form {
-  display: block;
   margin-top: 0em;
 }
 
 .inputS {
   position: relative;
-  display: block;
   float: right;
   border: none;
   border-radius: 0;

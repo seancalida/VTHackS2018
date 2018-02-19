@@ -1,22 +1,32 @@
-var video_out = document.getElementById("vid-box");
+var video_out = document.getElementById("inVid");
+var myVideo = document.getElementById("localVid");
 
-function login(form) {
-  var phone = window.phone = PHONE({
-    number        : form.username.value || "Anonymous", // listen on username line else Anonymous
-    publish_key   : 'pub-c-da6a1135-eae5-44bb-86f5-3ebdd87d500b',
-    subscribe_key : 'sub-c-445d9000-142a-11e8-91c1-eac6831c625c',
-  });
-  phone.ready(function(){ form.username.style.background="#55ff5b"; });
-  phone.receive(function(session){
-    session.connected(function(session) { video_out.appendChild(session.video); });
-    session.ended(function(session) { video_out.innerHTML=''; });
-  });
-  return false;   // So the form does not submit.
+if (myVideo == null) {
+  console.log("damn");
 }
 
+var phone = window.phone = PHONE({
+  number        : rkey, // given random number
+  publish_key   : 'pub-c-da6a1135-eae5-44bb-86f5-3ebdd87d500b',
+  subscribe_key : 'sub-c-445d9000-142a-11e8-91c1-eac6831c625c',
+  ssl           : true
+});
+phone.ready(function(){});
+phone.receive(function(session){
+  session.connected(function(session) {
+    video_out.appendChild(session.video);
+    myVideo.appendChild(phone.video);
+  });
+  session.ended(function(session) {
+    console.log("session has ended");
+    video_out.innerHTML='';
+    myVideo.innerHTML='';
+  });
+});
+
 function makeCall(form){
-  if (!window.phone) alert("Login First!");
-  else phone.dial(form.number.value);
+  phone.dial(form.number.value);
+  console.log("test 1");
   return false;
 }
 

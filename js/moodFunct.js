@@ -41,11 +41,11 @@ function processImage() {
     data: '{"url": ' + '"' + sourceImageUrl + '"}',
   })
   .done(function(data) {
-  // Show formatted JSON on webpage.
+    // Show formatted JSON on webpage.
 
-$("#smileval").text(data[0].faceAttributes.smile);
-$("#happyval").text(data[0].faceAttributes.emotion.happiness);
-$("#responseTextArea").val(JSON.stringify(data, null, 1));
+    $("#smileval").text(data[0].faceAttributes.smile);
+    $("#happyval").text(data[0].faceAttributes.emotion.happiness);
+    $("#responseTextArea").val(JSON.stringify(data, null, 1));
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
     // Display error message.

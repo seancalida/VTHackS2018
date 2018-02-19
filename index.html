@@ -1,68 +1,64 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Dont Laugh Game</title>
+  <link rel="stylesheet" href="css/main.css" type="text/css" />
+</head>
 
-  <head>
-
-    <title>Dont Laugh Game</title>
-
-    <link rel="stylesheet" href="css/main.css" type="text/css" />
-
-  </head>
-
-  <body>
-
+<body>
+  <div id="container">
     <h1>You Laugh You Lose!</h1>
 
-    <div id="vid-box"></div>
+    <div id="inVid">
+    </div>
+    <div id="localVid">
+    </div>
 
-  <form name="loginForm" id="login" action="#" onsubmit="return login(this);">
-    <input class="inputS" type="text" name="username" id="username" placeholder="Pick a username!" />
-    <input type="submit" name="login_submit" value="Log In">
-  </form>
+    <script type=text/javascript>
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
+    var rkey = getRandomInt(0, 50).toString();
+    </script>
 
-  <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
-    <input type="text" name="number" placeholder="Enter user to dial!" />
-    <input type="submit" value="Call"/>
-  </form>
+    <h2>
+      Your number is: <script type="text/javascript">document.write(rkey)</script>
+    </h2>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
-  <script src="https://kevingleason.me/SimpleRTC/js/webrtc.js"></script>
-  <script src="js/main.js"></script>
+    <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
+      <input type="text" name="number" placeholder="Enter number to play!" />
+      <input type="submit" value="Play" />
+    </form>
 
-  <button onclick="tellRJoke()">Show Joke</button>
-  <textarea id="responseTextArea" class="UIInput" style="width:250px; height:100px;"></textarea>
+    <button onclick="tellRJoke()">Show Joke</button>
+    <textarea id="responseTextArea" class="UIInput" style="width:250px; height:100px;"></textarea>
 
-  <script src="js/moodFunct.js"></script>
+    Image to analyze: <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
+    <button onclick="processImage()">Analyze face</button>
 
-  <h1>Detect Faces:</h1>
-
-  Enter the URL to an image that includes a face or faces, then click the <strong>Analyze face</strong> button.
-  <br><br>
-  Image to analyze: <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
-  <button onclick="processImage()">Analyze face</button>
-  <button onclick="tellRJoke()">Show Joke</button>
-  <br><br>
-  <div id="wrapper" style="width:1020px; display:table;">
-    <div id="jsonOutput" style="width:600px; display:table-cell;">
+    <div id="jsonOutput" style="width:300px; display:table-cell;">
       Smile?
-  	  <div id="smileval">
+      <div id="smileval">
       </div>
       Happy?
       <div id="happyval">
-    	</div>
-
-    	Joke:
-      <br><br>
-      <textarea id="responseTextArea" class="UIInput" style="width:580px; height:400px;"></textarea>
+      </div>
     </div>
+
     <div id="imageDiv" style="width:420px; display:table-cell;">
       Source image:
       <br><br>
       <img id="sourceImage" width="400" />
     </div>
+
   </div>
 
-</body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+  <script src="https://kevingleason.me/SimpleRTC/js/webrtc.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/moodFunct.js"></script>
 
+</body>
 </html>
