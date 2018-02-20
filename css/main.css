@@ -20,8 +20,21 @@ div#container {
   padding: 1em 1.5em 1.3em 1.5em;
 }
 
-div#vids {
+video {
+  object-fit: contain;
+}
 
+#localVid video{
+  height: 250px;
+  width: calc(80% - 12px);
+  vertical-align: top;
+  margin: 0 20px 20px 0;
+}
+
+#inVid video{
+  height: 100px;
+  width: calc(20% - 12px);
+  vertical-align: top;
 }
 
 @media screen and (max-width: 650px) {
@@ -53,36 +66,8 @@ div#vids {
   }
 }
 
-.bodyDiv {
-    text-align: center;
-}
-
-#localVid video{
-	width: 100%;
-	height: auto;
-    max-height: 50vh;
-    max-width: auto;
-}
-
-.video2 {
-    width: 33%;
-}
-
-video {
-    width: 25%;
-}
-
 form {
   margin-top: 0em;
-}
-
-.inputS {
-  position: relative;
-  float: right;
-  border: none;
-  border-radius: 0;
-  font-weight: 400;
-  font-size: 1.25em;
 }
 
 div#jsonOutput {
