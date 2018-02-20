@@ -8,13 +8,9 @@
 <body>
   <div id="container">
     <h1>You Laugh You Lose!</h1>
-    
-    <div id="vids">
-      <div id="inVid">
-      </div>
-      <div id="localVid">
-      </div>
-    </div>
+
+    <video id="inVideo" autoplay></video>
+    <video id="localVid" autoplay></video>
 
     <script type=text/javascript>
     function getRandomInt(min, max) {
@@ -29,7 +25,7 @@
     </h2>
 
     <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
-      <input type="text" name="number" placeholder="Enter number to play!" />
+      <input type="text" name="number" placeholder="Enter opponent number to play!" />
       <input type="submit" value="Play" />
     </form>
 

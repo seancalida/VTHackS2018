@@ -14,13 +14,13 @@ var phone = window.phone = PHONE({
 phone.ready(function(){});
 phone.receive(function(session){
   session.connected(function(session) {
-    video_out.appendChild(session.video);
-    myVideo.appendChild(phone.video);
+    video_out.srcObject = session.video;
+    myVideo.srcObject = phone.video;
   });
   session.ended(function(session) {
     console.log("session has ended");
-    video_out.innerHTML='';
-    myVideo.innerHTML='';
+    video_out.srcObject='';
+    myVideo.srcObject='';
   });
 });
 

@@ -20,15 +20,7 @@ div#container {
   padding: 1em 1.5em 1.3em 1.5em;
 }
 
-div#inVid {
-  display:inline;
-}
-
-div#localVid {
-  display:inline;
-}
-
-#localVid video{
+video#inVid{
   height: 100px;
   width: calc(20% - 12px);
   vertical-align: top;
