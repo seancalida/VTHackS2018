@@ -24,13 +24,13 @@ video {
   object-fit: contain;
 }
 
-div#localVid {
+#localVid video{
   height: 100px;
   width: calc(20% - 12px);
   vertical-align: top;
 }
 
-div#inVid {
+#inVid video{
   height: 250px;
   width: calc(80% - 12px);
   vertical-align: top;
