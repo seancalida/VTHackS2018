@@ -4,7 +4,7 @@ body {
   padding: 1em;
   text-shadow: 2px 2px 5px lightblue;
   background-image: url("https://wallup.net/wp-content/uploads/2016/01/135571-comics-Batman-minimalism-748x421.jpg");
-  background-size: cover;
+  background-size: contain;
   font-weight: 300;
   word-break: break-word;
   text-align: center;
