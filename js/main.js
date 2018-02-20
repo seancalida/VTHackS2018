@@ -14,7 +14,7 @@ var phone = window.phone = PHONE({
 phone.ready(function(){});
 phone.receive(function(session){
   session.connected(function(session) {
-     document.getElementById("inVideo") = session.video;
+    document.getElementById("inVideo") = session.video;
     document.getElementById("localVid") = phone.video;
   });
   session.ended(function(session) {
