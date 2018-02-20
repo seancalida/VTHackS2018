@@ -18,7 +18,7 @@
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    
+
     var rkey = getRandomInt(0, 50).toString();
     </script>
 
@@ -37,7 +37,7 @@
     Image to analyze: <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
     <button onclick="processImage()">Analyze face</button>
 
-    <div id="jsonOutput" style="width:300px; display:table-cell;">
+    <div id="jsonOutput" style="width:300px">
       Smile?
       <div id="smileval">
       </div>
