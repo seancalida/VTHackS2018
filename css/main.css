@@ -24,17 +24,17 @@ video {
   object-fit: contain;
 }
 
-#localVid video{
+div#localVid {
+  height: 100px;
+  width: calc(20% - 12px);
+  vertical-align: top;
+}
+
+div#inVid {
   height: 250px;
   width: calc(80% - 12px);
   vertical-align: top;
   margin: 0 20px 20px 0;
-}
-
-#inVid video{
-  height: 100px;
-  width: calc(20% - 12px);
-  vertical-align: top;
 }
 
 @media screen and (max-width: 650px) {
