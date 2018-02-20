@@ -20,8 +20,12 @@ div#container {
   padding: 1em 1.5em 1.3em 1.5em;
 }
 
-video {
-  object-fit: contain;
+div#inVid {
+  display:inline;
+}
+
+div#loclVid {
+  display:inline;
 }
 
 #localVid video{
