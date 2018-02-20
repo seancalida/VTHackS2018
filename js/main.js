@@ -1,4 +1,4 @@
-var video_out = document.getElementById("inVid");
+var video_out = document.getElementById("inVideo");
 var myVideo = document.getElementById("localVid");
 
 if (myVideo == null) {
@@ -14,8 +14,8 @@ var phone = window.phone = PHONE({
 phone.ready(function(){});
 phone.receive(function(session){
   session.connected(function(session) {
-    video_out = session.video;
-    myVideo = phone.video;
+     document.getElementById("inVideo") = session.video;
+    document.getElementById("localVid") = phone.video;
   });
   session.ended(function(session) {
     console.log("session has ended");
