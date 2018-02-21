@@ -1,9 +1,5 @@
 var video_out = document.getElementById("vid-box");
 
-if (myVideo == null) {
-  console.log("damn");
-}
-
 var phone = window.phone = PHONE({
   number        : rkey, // given random number
   publish_key   : 'pub-c-da6a1135-eae5-44bb-86f5-3ebdd87d500b',
