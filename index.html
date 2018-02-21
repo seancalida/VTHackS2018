@@ -7,6 +7,14 @@
 
 <body>
   <div id="container">
+
+    <div id="highlight">
+      <p>
+        <a href="https://vthacks.com/">VT Hackathon</a> submission:
+        online game featuring WebRTC and Microsoft cognitive services
+      </p>
+    </div>
+
     <h1>You Laugh You Lose!</h1>
 
     <div id="vid-box"></div>
@@ -29,11 +37,11 @@
     </form>
 
     <div>
-      <button onclick="tellRJoke()">Show Joke</button>
+      <textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>
     </div>
 
     <div>
-      <textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>
+      <button onclick="tellRJoke()">Show Joke</button>
     </div>
 
     <div>

@@ -2,10 +2,8 @@ body {
   font-family: "Times New Roman", Times, serif;
   margin: 0;
   padding: 1em;
-  text-shadow: 2px 2px 5px lightblue;
   font-weight: 300;
   word-break: break-word;
-  text-align: center;
 }
 
 #vid-box video{
@@ -21,6 +19,13 @@ div#container {
   margin: 0 auto 0 auto;
   max-width: 40em;
   padding: 1em 1.5em 1.3em 1.5em;
+}
+
+div#highlight {
+  background-color: #eee;
+  font-size: 1.2em;
+  margin: 0 0 30px 0;
+  padding: 0.2em 1.5em;
 }
 
 @media screen and (max-width: 650px) {
