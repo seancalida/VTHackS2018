@@ -28,6 +28,10 @@ div#highlight {
   padding: 0.2em 1.5em;
 }
 
+div#vid-box {
+  text-align: center;
+}
+
 @media screen and (max-width: 650px) {
   h1 {
     font-size: 24px;
