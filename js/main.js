@@ -15,7 +15,7 @@ phone.receive(function(session){
     video_out.appendChild(session.video);
     callInput.innerHTML = '';
     textS.innerHTML = '<textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>';
-    jb.innerHTML = '<textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>';
+    jb.innerHTML = '<button onclick="tellRJoke()">Show Joke</button>';
   });
   session.ended(function(session) {
     video_out.innerHTML = '';
