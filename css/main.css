@@ -1,5 +1,5 @@
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 1em;
   font-weight: 300;
@@ -37,6 +37,11 @@ div#highlight {
   h2 {
     font-size: 20;
   }
+  div#highlight {
+    font-size: 1em;
+    margin: 0 0 20px 0;
+    padding: 0.2em 1em;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -67,4 +72,10 @@ div#jsonOutput {
 
 div {
   margin: 0 0 10px 0;
+}
+
+a {
+  color: #6fa8dc;
+  font-weight: 300;
+  text-decoration: none;
 }
