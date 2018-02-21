@@ -61,3 +61,7 @@ form {
 div#jsonOutput {
   display: block;
 }
+
+div {
+  margin: 0 0 15px 0;
+}
