@@ -10,6 +10,11 @@ body {
   text-align: center;
 }
 
+#vid-box video{
+  height: 250px;
+  vertical-align: top;
+}
+
 h1 {
   border-bottom: 1px solid #ccc;
 }
@@ -18,19 +23,6 @@ div#container {
   margin: 0 auto 0 auto;
   max-width: 40em;
   padding: 1em 1.5em 1.3em 1.5em;
-}
-
-video#inVid{
-  height: 100px;
-  width: calc(20% - 12px);
-  vertical-align: top;
-}
-
-video{
-  height: 250px;
-  width: calc(80% - 12px);
-  vertical-align: top;
-  margin: 0 20px 20px 0;
 }
 
 @media screen and (max-width: 650px) {
