@@ -31,17 +31,17 @@
       Your number is: <script type="text/javascript">document.write(rkey)</script>
     </h2>
 
-    <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
-      <input type="text" name="number" placeholder="Enter an ID number to play!" />
-      <input type="submit" value="Play" />
-    </form>
-
-    <div>
-      <textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>
+    <div id="idInput">
+      <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
+        <input type="text" name="number" placeholder="Enter an ID number to play!" />
+        <input type="submit" value="Play" />
+      </form>
     </div>
 
-    <div>
-      <button onclick="tellRJoke()">Show Joke</button>
+    <div id="textShow">
+    </div>
+
+    <div id="jokeButton">
     </div>
 
     <div>
