@@ -79,3 +79,9 @@ a {
   font-weight: 300;
   text-decoration: none;
 }
+
+p {
+  color: #444;
+  font-weight: 300;
+  line-height: 1.6em;
+}
