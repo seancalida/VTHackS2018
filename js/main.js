@@ -1,4 +1,7 @@
 var video_out = document.getElementById("vid-box");
+var callInput = document.getElementById("idInput");
+var textS = document.getElementById("textShow");
+var jb = document.getElementById("jokeButton");
 
 var phone = window.phone = PHONE({
   number        : rkey, // given random number
@@ -10,6 +13,9 @@ phone.ready(function(){});
 phone.receive(function(session){
   session.connected(function(session) {
     video_out.appendChild(session.video);
+    callInput.innerHTML = '';
+    textS.innerHTML = '<textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>';
+    jb.innerHTML = '<textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>';
   });
   session.ended(function(session) {
     video_out.innerHTML = '';
