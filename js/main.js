@@ -1,5 +1,4 @@
-var video_out = document.getElementById("inVideo");
-var myVideo = document.getElementById("localVid");
+var video_out = document.getElementById("vid-box");
 
 if (myVideo == null) {
   console.log("damn");
@@ -14,13 +13,11 @@ var phone = window.phone = PHONE({
 phone.ready(function(){});
 phone.receive(function(session){
   session.connected(function(session) {
-    document.getElementById("inVideo") = session.video;
-    document.getElementById("localVid") = phone.video;
+    video_out.appendChild(session.video);
   });
   session.ended(function(session) {
     console.log("session has ended");
-    video_out='';
-    myVideo='';
+    video_out.innerHTML = '';
   });
 });
 
