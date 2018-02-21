@@ -10,7 +10,7 @@
     <h1>You Laugh You Lose!</h1>
 
     <div id="vid-box"></div>
-
+    
     <script type=text/javascript>
     function getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -28,11 +28,21 @@
       <input type="submit" value="Play" />
     </form>
 
-    <button onclick="tellRJoke()">Show Joke</button>
-    <textarea id="responseTextArea" class="UIInput" style="width:250px; height:100px;"></textarea>
+    <div>
+      <button onclick="tellRJoke()">Show Joke</button>
+    </div>
 
-    Image to analyze: <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
-    <button onclick="processImage()">Analyze face</button>
+    <div>
+      <textarea id="responseTextArea" class="UIInput" style="width:250px; height:100px;"></textarea>
+    </div>
+
+    <div>
+      Image to analyze: <input type="text" name="inputImage" id="inputImage" value="https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg" />
+    </div>
+
+    <div>
+      <button onclick="processImage()">Analyze face</button>
+    </div>
 
     <div id="jsonOutput">
       Smile?
