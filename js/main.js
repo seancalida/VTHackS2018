@@ -12,14 +12,12 @@ phone.receive(function(session){
     video_out.appendChild(session.video);
   });
   session.ended(function(session) {
-    console.log("session has ended");
     video_out.innerHTML = '';
   });
 });
 
 function makeCall(form){
   phone.dial(form.number.value);
-  console.log("test 1");
   return false;
 }
 

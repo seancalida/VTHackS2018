@@ -55,7 +55,7 @@ div#container {
 }
 
 form {
-  margin-top: 0em;
+  margin: 0 0 10px 0;
 }
 
 div#jsonOutput {
@@ -63,5 +63,5 @@ div#jsonOutput {
 }
 
 div {
-  margin: 0 0 15px 0;
+  margin: 0 0 10px 0;
 }
