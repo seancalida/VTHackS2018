@@ -1,4 +1,3 @@
-
 setInterval(analyze, 2000);
 function analyze() {
   if (checkSmile) {
@@ -31,6 +30,7 @@ function analyze() {
     })
     .done(function(data) {
       // Show formatted JSON on webpage.
+      console.log("something should be on text");
       $("#responseTextArea").val(JSON.stringify(data, null, 2));
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
