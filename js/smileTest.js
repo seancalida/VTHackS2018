@@ -3,6 +3,8 @@ function analyze() {
   if (checkSmile) {
     console.log("anotha one");
     var video = document.querySelector('video');
+    if (!video){console.log("no video found")};
+
     var canvas = document.querySelector('canvas');
     var context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, video.width, video.height);
