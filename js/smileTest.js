@@ -1,6 +1,8 @@
-if (checkSmile) {
-  setInterval(analyze, 2000);
-  function analyze() {
+
+setInterval(analyze, 2000);
+function analyze() {
+  if (checkSmile) {
+    console.log("anotha one");
     var video = document.querySelector('video');
     var canvas = document.querySelector('canvas');
     var context = canvas.getContext('2d');
@@ -13,7 +15,7 @@ if (checkSmile) {
     };
     $.ajax({
       url: uriBase + "?" + $.param(params),
-      
+
       // Request headers.
       beforeSend: function(xhrObj){
         xhrObj.setRequestHeader("Content-Type","application/octet-stream");
