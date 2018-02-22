@@ -33,6 +33,7 @@ function analyze() {
     .done(function(data) {
       // Show formatted JSON on webpage.
       console.log("something should be on text");
+      console.log(JSON.stringify(data));
       var smile1 = data[0].faceAttributes.smile;
       var happy1 = data[0].faceAttributes.emotion.happiness;
       console.log(smile1);
