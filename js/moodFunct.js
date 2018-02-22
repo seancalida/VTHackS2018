@@ -1,6 +1,7 @@
 setInterval(canvs, 2000);
 function canvs() {
   try {
+    console.log("snaps are happenin")
     var video = document.querySelector('video');
     if (!video)
     throw "no video";
