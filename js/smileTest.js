@@ -1,4 +1,4 @@
-setInterval(analyze, 2000);
+setInterval(analyze, 3000);
 function analyze() {
   if (checkSmile) {
     console.log("anotha one");
@@ -9,45 +9,46 @@ function analyze() {
 
     var img = new Image();
     img.src = canvas.toDataURL(1);
-    context.drawImage(video, 0, 0, img.width, img.height);
+    img.onload = function() {
+      context.drawImage(video, 0, 0, img.width, img.height);
 
-    var subscriptionKey = "8d3c23ec9e66474eb8c482a81d11dae6";
-    var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
-    var params = {
-      "returnFaceAttributes": "smile,emotion",
+      var subscriptionKey = "8d3c23ec9e66474eb8c482a81d11dae6";
+      var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
+      var params = {
+        "returnFaceAttributes": "smile,emotion",
+      };
+      $.ajax({
+        url: uriBase + "?" + $.param(params),
+
+        // Request headers.
+        beforeSend: function(xhrObj){
+          xhrObj.setRequestHeader("Content-Type","application/octet-stream");
+          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+        },
+
+        type: "POST",
+
+        // Request body.
+        data: makeblob(canvas.toDataURL()),
+
+        processData: false
+      })
+      .done(function(data) {
+        // Show formatted JSON on webpage.
+        console.log("Facial Attributes:");
+        var smile1 = data[0].faceAttributes.smile;
+        var happy1 = data[0].faceAttributes.emotion.happiness;
+        console.log(smile1);
+        console.log(happy1);
+      })
+      .fail(function(jqXHR, textStatus, errorThrown) {
+        // Display error message.
+        var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+        errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
+        jQuery.parseJSON(jqXHR.responseText).message : jQuery.parseJSON(jqXHR.responseText).error.message;
+        alert(errorString);
+      });
     };
-    $.ajax({
-      url: uriBase + "?" + $.param(params),
-
-      // Request headers.
-      beforeSend: function(xhrObj){
-        xhrObj.setRequestHeader("Content-Type","application/octet-stream");
-        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-      },
-
-      type: "POST",
-
-      // Request body.
-      data: makeblob(canvas.toDataURL()),
-
-      processData: false
-    })
-    .done(function(data) {
-      // Show formatted JSON on webpage.
-      console.log("something should be on text");
-      console.log(JSON.stringify(data));
-      var smile1 = data[0].faceAttributes.smile;
-      var happy1 = data[0].faceAttributes.emotion.happiness;
-      console.log(smile1);
-      console.log(happy1);
-    })
-    .fail(function(jqXHR, textStatus, errorThrown) {
-      // Display error message.
-      var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
-      errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
-      jQuery.parseJSON(jqXHR.responseText).message : jQuery.parseJSON(jqXHR.responseText).error.message;
-      alert(errorString);
-    });
   }
 }
 
