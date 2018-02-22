@@ -37,6 +37,14 @@ div#vid-box {
   text-align: center;
 }
 
+div#textShow {
+  text-align: center;
+}
+
+div#jokeButton {
+  text-align: center;
+}
+
 @media screen and (max-width: 650px) {
   h1 {
     font-size: 24px;
@@ -73,6 +81,7 @@ div#vid-box {
 
 form {
   margin: 0 0 10px 0;
+  text-align: center;
 }
 
 div#jsonOutput {
@@ -93,4 +102,8 @@ p {
   color: #444;
   font-weight: 200;
   line-height: 1.6em;
+}
+
+canvas {
+  text-align: center;
 }
