@@ -8,6 +8,7 @@ function analyze() {
     var canvas = document.querySelector('canvas');
     var context = canvas.getContext('2d');
     context.drawImage(video, 0, 0, video.width, video.height);
+    document.getElementById('photo').setAttribute('src', canvas.toDataURL('image/png'));
 
     var subscriptionKey = "8d3c23ec9e66474eb8c482a81d11dae6";
     var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
