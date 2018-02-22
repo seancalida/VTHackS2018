@@ -33,7 +33,10 @@ function analyze() {
     .done(function(data) {
       // Show formatted JSON on webpage.
       console.log("something should be on text");
-      $("#responseTextArea").val(JSON.stringify(data, null, 2));
+      var smile1 = data[0].faceAttributes.smile;
+      var happy1 = data[0].faceAttributes.emotion.happiness;
+      console.log(smile1);
+      console.log(happy1);
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
       // Display error message.
