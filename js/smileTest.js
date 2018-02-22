@@ -4,11 +4,13 @@ function analyze() {
     console.log("anotha one");
     var video = document.querySelector('video');
     if (!video){console.log("no video found")};
-
     var canvas = document.querySelector('canvas');
     var context = canvas.getContext('2d');
+
+    var poop = canvas.toDataURL('image/png');
     context.drawImage(video, 0, 0, video.width, video.height);
-    document.getElementById('photo').setAttribute('src', canvas.toDataURL('image/png'));
+    var photo = document.getElementById('photo');
+    photo.setAttribute('src', poop);
 
     var subscriptionKey = "8d3c23ec9e66474eb8c482a81d11dae6";
     var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
