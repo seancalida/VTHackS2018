@@ -2,7 +2,7 @@ var video_out = document.getElementById("vid-box");
 var callInput = document.getElementById("idInput");
 var textS = document.getElementById("textShow");
 var jb = document.getElementById("jokeButton");
-var func = document.getElementById("func");
+var checkSmile = false;
 
 var phone = window.phone = PHONE({
   number        : rkey, // given random number
@@ -17,10 +17,11 @@ phone.receive(function(session){
     callInput.innerHTML = '';
     textS.innerHTML = '<textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>';
     jb.innerHTML = '<button onclick="tellRJoke()">Show Joke</button>';
-    func.innerHTML = '<script src="js/moodFunct.js"></script>';
+    checkSmile = true;
   });
   session.ended(function(session) {
     video_out.innerHTML = '';
+    checkSmile = false;
   });
 });
 
