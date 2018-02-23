@@ -1,4 +1,5 @@
-setInterval(analyze, 3000);
+setInterval(analyze, 4000);
+
 function analyze() {
   if (checkSmile) {
     console.log("anotha one");
@@ -38,6 +39,10 @@ function analyze() {
         console.log("Facial Attributes:");
         var smile1 = data[0].faceAttributes.smile;
         var happy1 = data[0].faceAttributes.emotion.happiness;
+
+        if (smile1 > 0.8 || happy1 > 0.8) {
+          alert("you lost");
+        }
         console.log(smile1);
         console.log(happy1);
       })
