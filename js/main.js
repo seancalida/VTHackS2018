@@ -5,7 +5,6 @@ var jb = document.getElementById("jokeButton");
 var callNum = document.getElementById("callNumber");
 var checkSmile = false;
 var myPoints = document.getElementById("myPoints");
-var otherPoints = document.getElementById("otherPoints");
 
 var phone = window.phone = PHONE({
   number        : rkey, // given random number
@@ -22,7 +21,6 @@ phone.receive(function(session){
     textS.innerHTML = '<textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>';
     jb.innerHTML = '<button onclick="tellRJoke()">Show Joke</button>';
     myPoints.innerHTML = 'Score: 0';
-    otherPoints.innerHTML = 'Other Score: ';
     checkSmile = true;
   });
   session.ended(function(session) {
