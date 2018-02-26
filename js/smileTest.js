@@ -47,6 +47,12 @@ function analyze() {
           var pts = pointsBoi.toString();
           myPoints.innerHTML = 'Score: ' + pts;
         }
+        if (pointsBoi == 3) {
+          textS.innerHTML = '';
+          jb.innerHTML = '';
+          myPoints.innerHTML = 'YOU WON!';
+          checkSmile = false;
+        }
         console.log(pointsBoi);
         console.log(smileOther);
         console.log(happyOther);
