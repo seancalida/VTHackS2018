@@ -8,7 +8,7 @@ body {
 
 #vid-box video{
   height: 225px;
-  width: calc(50% - 12px);
+  width: calc(50% - 20px);
   vertical-align: top;
   margin: 0 0 20px 20px;
 }
