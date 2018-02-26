@@ -21,6 +21,10 @@ h2 {
   display: inline;
 }
 
+h2#callNumber {
+  display: block;
+}
+
 div#container {
   margin: 0 auto 0 auto;
   max-width: 40em;
@@ -100,7 +104,10 @@ a {
 }
 
 a#viewSource {
+  display: block;
+  margin: 1.3em 0 0 0;
   border-top: 1px solid #3f3e3e;
+  padding: 1em 0 0 0;
 }
 
 p {
@@ -114,5 +121,6 @@ canvas {
 }
 
 code {
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
