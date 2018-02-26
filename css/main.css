@@ -113,9 +113,5 @@ p {
 
 canvas {
   text-align: center;
-}
-
-code {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  width: calc(50% - 6px);
 }

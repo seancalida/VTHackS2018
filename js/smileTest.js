@@ -44,8 +44,10 @@ function analyze() {
         if (smileOther > 0.8 || happyOther > 0.8) {
           console.log("you get a point");
           pointsBoi++;
-          myPoints.innerHTML = 'Score: <script type="text/javascript">document.write(pointsBoi)</script>';
+          var pts = pointsBoi.toString();
+          myPoints.innerHTML = 'Score: ' + pts;
         }
+        console.log(pointsBoi);
         console.log(smileOther);
         console.log(happyOther);
       })
