@@ -37,14 +37,15 @@ function analyze() {
       .done(function(data) {
         // Show formatted JSON on webpage.
         console.log("Facial Attributes:");
-        var smile1 = data[0].faceAttributes.smile;
-        var happy1 = data[0].faceAttributes.emotion.happiness;
+        var smileOther = data[0].faceAttributes.smile;
+        var happyOther = data[0].faceAttributes.emotion.happiness;
 
-        if (smile1 > 0.8 || happy1 > 0.8) {
-          alert("you lost");
+        // Checks the smile levels of other player not yours!
+        if (smileOther > 0.8 || happyOther > 0.8) {
+          console.log("you get a point");
         }
-        console.log(smile1);
-        console.log(happy1);
+        console.log(smileOther);
+        console.log(happyOther);
       })
       .fail(function(jqXHR, textStatus, errorThrown) {
         // Display error message.

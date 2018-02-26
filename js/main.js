@@ -2,7 +2,10 @@ var video_out = document.getElementById("vid-box");
 var callInput = document.getElementById("idInput");
 var textS = document.getElementById("textShow");
 var jb = document.getElementById("jokeButton");
+var callNum = document.getElementById("callNumber");
 var checkSmile = false;
+var myPoints = document.getElementById("myPoints");
+var otherPoints = document.getElementById("otherPoints");
 
 var phone = window.phone = PHONE({
   number        : rkey, // given random number
@@ -15,8 +18,11 @@ phone.receive(function(session){
   session.connected(function(session) {
     video_out.appendChild(session.video);
     callInput.innerHTML = '';
+    callNum.innerHTML = '';
     textS.innerHTML = '<textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>';
     jb.innerHTML = '<button onclick="tellRJoke()">Show Joke</button>';
+    myPoints.innerHTML = 'My Score: ';
+    otherPoints.innerHTML = 'Other Score: ';
     checkSmile = true;
   });
   session.ended(function(session) {
