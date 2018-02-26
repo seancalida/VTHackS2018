@@ -1,4 +1,5 @@
 setInterval(analyze, 4000);
+var pointsBoi = 0;
 
 function analyze() {
   if (checkSmile) {
@@ -42,6 +43,8 @@ function analyze() {
         // Checks the smile levels of other player not yours!
         if (smileOther > 0.8 || happyOther > 0.8) {
           console.log("you get a point");
+          pointsBoi++;
+          myPoints.innerHTML = 'Score: <script type="text/javascript">document.write(pointsBoi)</script>';
         }
         console.log(smileOther);
         console.log(happyOther);

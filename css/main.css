@@ -18,11 +18,6 @@ h1 {
 
 h2 {
   text-align: center;
-  display: inline;
-}
-
-h2#callNumber {
-  display: block;
 }
 
 div#container {

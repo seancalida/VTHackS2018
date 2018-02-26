@@ -21,7 +21,7 @@ phone.receive(function(session){
     callNum.innerHTML = '';
     textS.innerHTML = '<textarea id="responseTextArea" class="UIInput" style="width:350px; height:75px;"></textarea>';
     jb.innerHTML = '<button onclick="tellRJoke()">Show Joke</button>';
-    myPoints.innerHTML = 'My Score: ';
+    myPoints.innerHTML = 'Score: 0';
     otherPoints.innerHTML = 'Other Score: ';
     checkSmile = true;
   });
