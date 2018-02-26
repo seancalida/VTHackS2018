@@ -25,6 +25,13 @@ phone.receive(function(session){
   });
   session.ended(function(session) {
     video_out.innerHTML = '';
+    textS.innerHTML = '';
+    jb.innerHTML = '';
+    if (pointsBoi == 3) {
+      myPoints.innerHTML = 'YOU WON!';
+    } else {
+      myPoints.innerHTML = 'YOU LOST!';
+    }
     checkSmile = false;
   });
 });

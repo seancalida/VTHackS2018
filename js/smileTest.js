@@ -50,8 +50,7 @@ function analyze() {
         if (pointsBoi == 3) {
           textS.innerHTML = '';
           jb.innerHTML = '';
-          myPoints.innerHTML = 'YOU WON!';
-          checkSmile = false;
+          phone.hangup();
         }
         console.log(pointsBoi);
         console.log(smileOther);
