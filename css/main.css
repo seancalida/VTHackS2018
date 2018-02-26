@@ -18,6 +18,7 @@ h1 {
 
 h2 {
   text-align: center;
+  display: inline;
 }
 
 div#container {
@@ -98,6 +99,10 @@ a {
   text-decoration: none;
 }
 
+a#viewSource {
+  border-top: 1px solid #3f3e3e;
+}
+
 p {
   color: #444;
   font-weight: 200;
@@ -106,4 +111,8 @@ p {
 
 canvas {
   text-align: center;
+}
+
+code {
+  font-weight: 400;
 }

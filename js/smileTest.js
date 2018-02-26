@@ -2,7 +2,6 @@ setInterval(analyze, 4000);
 
 function analyze() {
   if (checkSmile) {
-    console.log("anotha one");
     var video = document.querySelector('video');
     if (!video){console.log("no video found")};
     var canvas = document.querySelector('canvas');
@@ -11,7 +10,7 @@ function analyze() {
     var img = new Image();
     img.src = canvas.toDataURL(1);
     img.onload = function() {
-      context.drawImage(video, 0, 0, img.width, img.height);
+      context.drawImage(video, 0, 0, video.width, video.height);
 
       var subscriptionKey = "8d3c23ec9e66474eb8c482a81d11dae6";
       var uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";

@@ -30,9 +30,11 @@
     var rkey = getRandomInt(0, 50).toString();
     </script>
 
-    <h2 id="callNumber">
-      Your ID number is: <script type="text/javascript">document.write(rkey)</script>
-    </h2>
+    <div>
+      <h2 id="callNumber">
+        Your ID number is: <script type="text/javascript">document.write(rkey)</script>
+      </h2>
+    </div>
 
     <div id="idInput">
       <form name="callForm" id="call" action="#" onsubmit="return makeCall(this);">
@@ -49,6 +51,20 @@
     <div id="textShow"></div>
 
     <div id="jokeButton"></div>
+
+    <p>
+      <code>How to play:</code> Enter ID number of opposing player to play.
+      Take turns reading from the random joke generator.
+      First person to laugh a total of 3 times lose.
+      It takes snapshots of the incoming video stream and submits a request to the
+      Face API by Microsoft. The snapshots are diplayed on the left.
+    </p>
+
+    <p>
+      This was VT Hackathon Spring 2018 submission.
+    </p>
+
+    <a href="https://github.com/seancalida/VTHackS2018" id="viewSource">View Source on GitHub</a>
 
   </div>
 
