@@ -115,7 +115,7 @@ p {
 
 canvas {
   text-align: center;
-  width: calc(50% - 12px);
+  width: calc(50% - 20px);
   height: 225px;
   margin: 0 0 20px 0;
 }
