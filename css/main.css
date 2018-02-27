@@ -8,7 +8,7 @@ body {
 
 #vid-box video{
   height: 225px;
-  width: calc(50% - 20px);
+  width: calc(50% - 15px);
   vertical-align: top;
 }
 
@@ -113,7 +113,7 @@ p {
 }
 
 canvas {
-  width: calc(50% - 20px);
+  width: calc(50% - 15px);
   height: 225px;
-  margin-right: 30px;
+  margin-right: 25px;
 }
