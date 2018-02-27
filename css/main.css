@@ -10,7 +10,6 @@ body {
   height: 225px;
   width: calc(50% - 20px);
   vertical-align: top;
-  float: right;
 }
 
 h1 {
@@ -116,5 +115,5 @@ p {
 canvas {
   width: calc(50% - 20px);
   height: 225px;
-  float: left;
+  margin-right: 20px;
 }
